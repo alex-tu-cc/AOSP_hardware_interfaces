@@ -1,0 +1,19 @@
+package android.hardware.helloworld@1.0;
+
+interface IHelloWorld {
+
+    // An interface call justTest
+    // @param[in] name ; a string type input value.
+    // @param[out] result ; a string type output value.
+    // @param[out] value ; a HelloTest type out put value, HelloTest will be defined in type.hal.
+    justTest(string name) generates (string result, HelloTest value);
+
+
+    // An interface call justTest
+    // Input:
+    //  - string name
+    // Output:
+    //  - string result
+    //  - HelloTest value; the HelloTest will be defined in type.hal.
+    justTest1(HelloTest name);
+};
