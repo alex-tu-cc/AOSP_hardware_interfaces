@@ -1,4 +1,10 @@
-service helloworld-hal-1-0 /vendor/bin/hw/android.hardware.helloalex@1.0-service
+#service vendor.helloalex /system/bin/logwrapper /vendor/bin/hw/android.hardware.helloalex@1.0-service
+service vendor.helloalex /vendor/bin/hw/android.hardware.helloalex@1.0-service
     class hal
     user system
     group system
+
+#service start on property change to 1
+on property:vendor.customproperty=1
+    Write /dev/kmesg "alex: start vendor.helloalex"
+    Start vendor.helloalex 
